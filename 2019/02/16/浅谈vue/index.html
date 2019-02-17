@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、Vue.js 是什么我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-17T13:34:59.463Z">
+<meta property="og:updated_time" content="2019-02-17T13:39:37.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue入门">
 <meta name="twitter:description" content="1、Vue.js 是什么我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统">
@@ -230,7 +230,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-浅谈vue" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-浅谈vue" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/02/16/浅谈vue/" class="article-date">
@@ -240,7 +240,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -269,19 +269,10 @@
       
           
         <h2 id="1、Vue-js-是什么"><a href="#1、Vue-js-是什么" class="headerlink" title="1、Vue.js 是什么"></a>1、Vue.js 是什么</h2><p>我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统支持的库结合，使得Vue 也完全胜任复杂的单页应用程序，而且上手也很容易了。</p>
-<h2 id="2、vue的两个核心点"><a href="#2、vue的两个核心点" class="headerlink" title="2、vue的两个核心点"></a>2、vue的两个核心点</h2><p>介绍核心点之前我们先写个小例子吧。<br>页面中引入vuejs ,可以去官网上下载开发版本,也可以采用CDN方式直接引入 <script src="https://cdn.jsdelivr.net/npm/vue"></script> </p>
+<h2 id="2、vue的两个核心点"><a href="#2、vue的两个核心点" class="headerlink" title="2、vue的两个核心点"></a>2、vue的两个核心点</h2><p>介绍核心点之前我们先写个小例子吧。<br>页面中引入vuejs ,可以去官网上下载开发版本,也可以采用CDN方式直接引入 <code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;</code></p>
 <blockquote>
-<p>&lt;!DOCTYPE html&gt; </p>
 </blockquote>
-<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>vuejs</title><br>        <script src="https://cdn.jsdelivr.net/npm/vue"></script><br>    </head><br>    <body><br>        <div id="app"><br>            <h2 id="1、Vue-js-是什么"><a href="#1、Vue-js-是什么" class="headerlink" title="1、Vue.js 是什么"></a>1、Vue.js 是什么</h2><p>我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统支持的库结合，使得Vue 也完全胜任复杂的单页应用程序，而且上手也很容易了。</p>
-<h2 id="2、vue的两个核心点"><a href="#2、vue的两个核心点" class="headerlink" title="2、vue的两个核心点"></a>2、vue的两个核心点</h2><p>介绍核心点之前我们先写个小例子吧。<br>页面中引入vuejs ,可以去官网上下载开发版本,也可以采用CDN方式直接引入 <script src="https://cdn.jsdelivr.net/npm/vue"></script> </p>
-<blockquote>
-<p>&lt;!DOCTYPE html&gt; </p>
-</blockquote>
-<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>vuejs</title><br>        <script src="https://cdn.jsdelivr.net/npm/vue"></script><br>    </head><br>    <body><br>        <div id="app"><br>            {{ content }}<br>        </div><br>        <script><br>            let data = {<br>                content:”Hello World!”<br>            }<br>            var vm = new Vue({<br>                el:”#app”,<br>                data:data<br>            });<br>        </script><br>    </body><br></html> 
-
-<br>        </div><br>        <script><br>            let data = {<br>                content:”Hello World!”<br>            }<br>            var vm = new Vue({<br>                el:”#app”,<br>                data:data<br>            });<br>        </script><br>    </body><br></html> 
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; </span><br><span class="line">&lt;html&gt; </span><br><span class="line">    &lt;head&gt; </span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt; </span><br><span class="line">        &lt;title&gt;vuejs&lt;/title&gt; </span><br><span class="line">        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/head&gt; </span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">            &#123;&#123; content &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            let data = &#123;</span><br><span class="line">                content:&quot;Hello World!&quot;</span><br><span class="line">            &#125;</span><br><span class="line">            var vm = new Vue(&#123;</span><br><span class="line">                el:&quot;#app&quot;,</span><br><span class="line">                data:data</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -294,20 +285,20 @@
               <p>纯属好玩</p>
             </div>
             <div class="shang_payimg">
-              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
             </div>
               <div class="pay_explain">扫码打赏，你说多少就多少</div>
             <div class="shang_payselect">
               
                 <div class="pay_item checked" data-id="alipay">
                   <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
                 </div>
               
               
                 <div class="pay_item" data-id="wechat">
                   <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
                 </div>
               
             </div>
@@ -340,7 +331,7 @@
         <p><span>本文标题:</span><a href="/2019/02/16/浅谈vue/">Vue入门</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
         <p><span>发布时间:</span>2019年02月16日 - 15时21分</p>
-        <p><span>最后更新:</span>2019年02月17日 - 21时34分</p>
+        <p><span>最后更新:</span>2019年02月17日 - 21时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/16/浅谈vue/" title="Vue入门">http://yoursite.com/2019/02/16/浅谈vue/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/02/16/浅谈vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -369,7 +360,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Vue-js-是什么"><span class="toc-number">1.</span> <span class="toc-text">1、Vue.js 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、vue的两个核心点"><span class="toc-number">2.</span> <span class="toc-text">2、vue的两个核心点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Vue-js-是什么"><span class="toc-number">3.</span> <span class="toc-text">1、Vue.js 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、vue的两个核心点"><span class="toc-number">4.</span> <span class="toc-text">2、vue的两个核心点</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Vue-js-是什么"><span class="toc-number">1.</span> <span class="toc-text">1、Vue.js 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、vue的两个核心点"><span class="toc-number">2.</span> <span class="toc-text">2、vue的两个核心点</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
