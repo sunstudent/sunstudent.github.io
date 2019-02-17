@@ -230,7 +230,7 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-浅谈vue" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-浅谈vue" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/02/16/浅谈vue/" class="article-date">
@@ -240,7 +240,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -257,7 +257,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h1><p>&nbsp; &nbsp; &nbsp; &nbsp;我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统支持的库结合，使得Vue 也完全胜任复杂的单页应用程序，而且上手也很容易了。</p>
+        <h2 id="1、Vue-js-是什么"><a href="#1、Vue-js-是什么" class="headerlink" title="1、Vue.js 是什么"></a>1、Vue.js 是什么</h2><p>我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统支持的库结合，使得Vue 也完全胜任复杂的单页应用程序，而且上手也很容易了。</p>
+<h2 id="2、vue的两个核心点"><a href="#2、vue的两个核心点" class="headerlink" title="2、vue的两个核心点"></a>2、vue的两个核心点</h2><p>介绍核心点之前我们先写个小例子吧。<br>页面中引入vuejs ,可以去官网上下载开发版本,也可以采用CDN方式直接引入 <script src="https://cdn.jsdelivr.net/npm/vue"></script> </p>
+<blockquote>
+<p>&lt;!DOCTYPE html&gt; </p>
+</blockquote>
+<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>vuejs</title><br>        <script src="https://cdn.jsdelivr.net/npm/vue"></script><br>    </head><br>    <body><br>        <div id="app"><br>            <h2 id="1、Vue-js-是什么"><a href="#1、Vue-js-是什么" class="headerlink" title="1、Vue.js 是什么"></a>1、Vue.js 是什么</h2><p>我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统支持的库结合，使得Vue 也完全胜任复杂的单页应用程序，而且上手也很容易了。</p>
+<h2 id="2、vue的两个核心点"><a href="#2、vue的两个核心点" class="headerlink" title="2、vue的两个核心点"></a>2、vue的两个核心点</h2><p>介绍核心点之前我们先写个小例子吧。<br>页面中引入vuejs ,可以去官网上下载开发版本,也可以采用CDN方式直接引入 <script src="https://cdn.jsdelivr.net/npm/vue"></script> </p>
+<blockquote>
+<p>&lt;!DOCTYPE html&gt; </p>
+</blockquote>
+<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>vuejs</title><br>        <script src="https://cdn.jsdelivr.net/npm/vue"></script><br>    </head><br>    <body><br>        <div id="app"><br>            {{ content }}<br>        </div><br>        <script><br>            let data = {<br>                content:”Hello World!”<br>            }<br>            var vm = new Vue({<br>                el:”#app”,<br>                data:data<br>            });<br>        </script><br>    </body><br></html> 
+
+<br>        </div><br>        <script><br>            let data = {<br>                content:”Hello World!”<br>            }<br>            var vm = new Vue({<br>                el:”#app”,<br>                data:data<br>            });<br>        </script><br>    </body><br></html> 
+
 
       
       
