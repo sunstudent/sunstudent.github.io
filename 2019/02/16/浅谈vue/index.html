@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、Vue.js 是什么我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-17T15:13:45.409Z">
+<meta property="og:updated_time" content="2019-02-17T15:16:08.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue入门">
 <meta name="twitter:description" content="1、Vue.js 是什么我们看官网上的介绍:vue.js  是一套构建用户界面的渐进式js框架。那么什么叫渐进式框架呢？所谓渐进式就是一步一步的用嘛，比如你只想在页面上渲染一些简单数据，那你只用它的核心代码就好。如果你想更进一步用到组件，那你需要用vue的组件系统。如果项目更大,那你需要用到路由啊,构建工具等等。项目需要哪块就用哪块，这样自底向上增量开发的设计，加上与单文件组件和 Vue 生态系统">
@@ -273,8 +273,8 @@
 <p>最好,还是手动敲一遍吧，你就会知道你会犯多少低级错误。在浏览器中查看实例，打开控制台，输入vm.content = “Hi, vue!”,回车页面立马输出变为HI,vue! 这说明数据改变,页面也自动改变。那就引出了Vue的第一个核心点——响应式的数据绑定。是不是很Nice!</p>
 <h3 id="数据劫持（Vue-js）"><a href="#数据劫持（Vue-js）" class="headerlink" title="数据劫持（Vue.js）"></a>数据劫持（Vue.js）</h3><p>思路： vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。<br>具体怎么使用Object.defineProperty()实现响应式数据绑定,可以看这里:  <code>http://www.jb51.net/article/106484.html</code></p>
 <h3 id="第二个核心点——组合的视图组件"><a href="#第二个核心点——组合的视图组件" class="headerlink" title="第二个核心点——组合的视图组件"></a>第二个核心点——组合的视图组件</h3><p>&nbsp; vue写页面时，我们可以头部一个组件，侧边一个组件，中间内容区域另外一个组件。vue将我们的页面映射为组件树。这样做组件可重用，好处很多。<br>[图片]: <a href="https://images2017.cnblogs.com/blog/506639/201710/506639-20171023203631754-189911764.png" target="_blank" rel="noopener">https://images2017.cnblogs.com/blog/506639/201710/506639-20171023203631754-189911764.png</a></p>
-<h2 id="3、虚拟DOM"><a href="#3、虚拟DOM" class="headerlink" title="3、虚拟DOM"></a>3、虚拟DOM</h2><p>首先我们定义的模板（无论是html模板,字符串模板还是render函数定义的模板），编译调用内部的渲染函数(createElement)形成图二的数据结构，经过render生成虚拟DOM树，这个虚拟的DOM树存在内存中,经过内部的编译器最后形成真实的DOM。<br>[不一样]: <a href="https://images2017.cnblogs.com/blog/506639/201710/506639-20171023211358035-80035508.png" target="_blank" rel="noopener">https://images2017.cnblogs.com/blog/506639/201710/506639-20171023211358035-80035508.png</a><br>那么虚拟DOM有什么好处呢？我们知道运行js很快,但是大量操作DOM就会很慢,我们在更新一个元素的值后,经常要刷新整个DOM,这样造成了资源的浪费。有了虚拟DOM，当某个DOM节点的属性值发生变化后，只更新这一小块的节点，这样大大提高了性能。虚拟DOM这块，还有好多算法，有机会再开博客总结，自己可以先研究一下。</p>
-<h2 id="4、MVVM模式"><a href="#4、MVVM模式" class="headerlink" title="4、MVVM模式"></a>4、MVVM模式</h2><p>M 代表数据模型，V 视图，VM视图模型。我们从model层拿到数据以后，通过vm层到view视图层进行渲染，vm层帮我们帮数据进行绑定，它就是m层和v层之前的桥梁，把他两联系起来。具体到项目中，我们可以看刚才的实例：<br>[我们不一样]: <a href="https://images2017.cnblogs.com/blog/506639/201710/506639-20171025185317426-2133817592.png" target="_blank" rel="noopener">https://images2017.cnblogs.com/blog/506639/201710/506639-20171025185317426-2133817592.png</a></p>
+<h2 id="3、虚拟DOM"><a href="#3、虚拟DOM" class="headerlink" title="3、虚拟DOM"></a>3、虚拟DOM</h2><p>首先我们定义的模板（无论是html模板,字符串模板还是render函数定义的模板），编译调用内部的渲染函数(createElement)形成图二的数据结构，经过render生成虚拟DOM树，这个虚拟的DOM树存在内存中,经过内部的编译器最后形成真实的DOM。<br>那么虚拟DOM有什么好处呢？我们知道运行js很快,但是大量操作DOM就会很慢,我们在更新一个元素的值后,经常要刷新整个DOM,这样造成了资源的浪费。有了虚拟DOM，当某个DOM节点的属性值发生变化后，只更新这一小块的节点，这样大大提高了性能。虚拟DOM这块，还有好多算法，有机会再开博客总结，自己可以先研究一下。</p>
+<h2 id="4、MVVM模式"><a href="#4、MVVM模式" class="headerlink" title="4、MVVM模式"></a>4、MVVM模式</h2><p>M 代表数据模型，V 视图，VM视图模型。我们从model层拿到数据以后，通过vm层到view视图层进行渲染，vm层帮我们帮数据进行绑定，它就是m层和v层之前的桥梁，把他两联系起来。具体到项目中，我们可以看刚才的实例：</p>
 
       
       
@@ -333,7 +333,7 @@
         <p><span>本文标题:</span><a href="/2019/02/16/浅谈vue/">Vue入门</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
         <p><span>发布时间:</span>2019年02月16日 - 15时21分</p>
-        <p><span>最后更新:</span>2019年02月17日 - 23时13分</p>
+        <p><span>最后更新:</span>2019年02月17日 - 23时16分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/16/浅谈vue/" title="Vue入门">http://yoursite.com/2019/02/16/浅谈vue/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/02/16/浅谈vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
