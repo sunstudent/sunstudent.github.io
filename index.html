@@ -316,7 +316,7 @@
 <p>最好,还是手动敲一遍吧，你就会知道你会犯多少低级错误。在浏览器中查看实例，打开控制台，输入vm.content = “Hi, vue!”,回车页面立马输出变为HI,vue! 这说明数据改变,页面也自动改变。那就引出了Vue的第一个核心点——响应式的数据绑定。是不是很Nice!</p>
 <h3 id="数据劫持（Vue-js）"><a href="#数据劫持（Vue-js）" class="headerlink" title="数据劫持（Vue.js）"></a>数据劫持（Vue.js）</h3><p>思路： vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。<br>具体怎么使用Object.defineProperty()实现响应式数据绑定,可以看这里: <code>http://www.jb51.net/article/106484.html</code></p>
 <h3 id="第二个核心点——组合的视图组件"><a href="#第二个核心点——组合的视图组件" class="headerlink" title="第二个核心点——组合的视图组件"></a>第二个核心点——组合的视图组件</h3><p>&nbsp; vue写页面时，我们可以头部一个组件，侧边一个组件，中间内容区域另外一个组件。vue将我们的页面映射为组件树。这样做组件可重用，好处很多。</p>
-<p><img src="https://images2015.cnblogs.com/blog/939429/201701/939429-20170109204226447-1065803867.png" width="200" height="100" alt="组件"></p>
+<p>&lt;img src=”<a href="https://images2015.cnblogs.com/blog/939429/201701/939429-20170109204226447-1065803867.png&quot;width=&quot;40%&quot;" target="_blank" rel="noopener">https://images2015.cnblogs.com/blog/939429/201701/939429-20170109204226447-1065803867.png&quot;width=&quot;40%&quot;</a> height=”20%”&gt;</p>
 <h2 id="3、虚拟DOM"><a href="#3、虚拟DOM" class="headerlink" title="3、虚拟DOM"></a>3、虚拟DOM</h2><p>首先我们定义的模板（无论是html模板,字符串模板还是render函数定义的模板），编译调用内部的渲染函数(createElement)形成图二的数据结构，经过render生成虚拟DOM树，这个虚拟的DOM树存在内存中,经过内部的编译器最后形成真实的DOM。<br>那么虚拟DOM有什么好处呢？我们知道运行js很快,但是大量操作DOM就会很慢,我们在更新一个元素的值后,经常要刷新整个DOM,这样造成了资源的浪费。有了虚拟DOM，当某个DOM节点的属性值发生变化后，只更新这一小块的节点，这样大大提高了性能。虚拟DOM这块，还有好多算法，有机会再开博客总结，自己可以先研究一下。</p>
 <h2 id="4、MVVM模式"><a href="#4、MVVM模式" class="headerlink" title="4、MVVM模式"></a>4、MVVM模式</h2><p>M 代表数据模型，V 视图，VM视图模型。我们从model层拿到数据以后，通过vm层到view视图层进行渲染，vm层帮我们帮数据进行绑定，它就是m层和v层之前的桥梁，把他两联系起来。具体到项目中，我们可以看刚才的实例：</p>
 
