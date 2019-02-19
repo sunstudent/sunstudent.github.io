@@ -14,12 +14,11 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119154942359-305841960.png">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119160619687-1542337893.png">
-<meta property="og:image" content="http://yoursite.com/source/_posts/学习Vue/view.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175928677-14693187.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175847328-2051071095.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png">
-<meta property="og:updated_time" content="2019-02-18T13:05:00.144Z">
+<meta property="og:updated_time" content="2019-02-19T01:13:44.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 起步">
 <meta name="twitter:description" content="一、Vue是渐进式框架只关注视图层(view)，一点一点去使用。 二、vue中的两个核心点1. 响应的数据绑定当数据发生改变 -&amp;gt; 自动更新视图。利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于Object.definedProperty()方法。单向绑定就是把Model绑定到View，当我">
@@ -274,13 +273,17 @@
         <h1 id="一、Vue是渐进式框架"><a href="#一、Vue是渐进式框架" class="headerlink" title="一、Vue是渐进式框架"></a>一、Vue是渐进式框架</h1><p>只关注视图层(view)，一点一点去使用。<br><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119154942359-305841960.png" alt="Image"></p>
 <h1 id="二、vue中的两个核心点"><a href="#二、vue中的两个核心点" class="headerlink" title="二、vue中的两个核心点"></a>二、vue中的两个核心点</h1><h2 id="1-响应的数据绑定"><a href="#1-响应的数据绑定" class="headerlink" title="1. 响应的数据绑定"></a>1. 响应的数据绑定</h2><p>当数据发生改变 -&gt; 自动更新视图。<br>利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于<u>Object.definedProperty()</u>方法。<br>单向绑定就是把Model绑定到View，当我们用JavaScript代码更新Model时，View就会自动更新。如果用户更新了View，Model的数据也自动被更新了，这种情况就是双向绑定。</p>
 <h3 id="实现数据绑定的做法有以下几种："><a href="#实现数据绑定的做法有以下几种：" class="headerlink" title="实现数据绑定的做法有以下几种："></a>实现数据绑定的做法有以下几种：</h3><p>发布者-订阅者模式（backbone.js）：顾名思义，就是有订阅者和发布者，两者的功能，订阅是请求在某些事件(event)到达时可以通知它并执行对应的动作(action)，而发布则相对的是向订阅告知事件(event)已经到达，你可以执行对应的动作(action)了。<br>脏值检查（angular.js）<br>数据劫持（vue.js）：vue.js 则是采用[数据劫持结合发布者-订阅者模式]的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
-<h2 id="组合的视图组件"><a href="#组合的视图组件" class="headerlink" title="组合的视图组件"></a>组合的视图组件</h2><p>UI页面映射为组件树<br>划分组件可维护，可重用，可测试<br><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119160619687-1542337893.png" alt="Image"><br><img src="/source/_posts/学习Vue/view.png"></p>
+<h2 id="组合的视图组件"><a href="#组合的视图组件" class="headerlink" title="组合的视图组件"></a>组合的视图组件</h2><p>UI页面映射为组件树<br>划分组件可维护，可重用，可测试<br><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119160619687-1542337893.png" alt="Image"></p>
 <h1 id="三、虚拟DOM"><a href="#三、虚拟DOM" class="headerlink" title="三、虚拟DOM"></a>三、虚拟DOM</h1><p>运行js是很快的，但是大量的DOM操作却很慢，用js的做法是当某一个数据发生改变的时候，拼接我们的结构，用innerHtml一次性再渲染一遍。更新数据时重新渲染整个页面，即没有改变数据的地方也重新渲染了DOM 节点，造成很大的资源浪费。<br>利用在内存中生成与真实DOM对应的数据结构，这个在内存中生成的结构成为虚拟DOM。<u>当数据发生改变时，只渲染改变的地方，而不是重新渲染整个DOM树。</u><br>第一步：模板</p>
 <blockquote>
-<ul id="my-id"><br>    <li v-for="item in list"></li><br></ul>
 </blockquote>
-<p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175928677-14693187.png" alt="Image"><br>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175847328-2051071095.png" alt="Image"><br>第四步：create，编译成一个真实的dom。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png" alt="Image"></p>
-<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png" alt="Image"><br>M：Model 数据模型<br>V：view 视图模板<br>VM：view-Model 视图模型</p>
+<ul id="my-id"><br>    <li v-for="item in list"></li><br></ul>
+
+<p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175928677-14693187.png" alt="Image"></p>
+<p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413175847328-2051071095.png" alt="Image"></p>
+<p>第四步：create，编译成一个真实的dom。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png" alt="Image"></p>
+<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png" alt="Image"></p>
+<p>M：Model 数据模型<br>V：view 视图模板<br>VM：view-Model 视图模型</p>
 
       
       
@@ -339,7 +342,7 @@
         <p><span>本文标题:</span><a href="/2018/10/15/学习Vue/">Vue 起步</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
         <p><span>发布时间:</span>2018年10月15日 - 23时40分</p>
-        <p><span>最后更新:</span>2019年02月18日 - 21时05分</p>
+        <p><span>最后更新:</span>2019年02月19日 - 09时13分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/15/学习Vue/" title="Vue 起步">http://yoursite.com/2018/10/15/学习Vue/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/15/学习Vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
