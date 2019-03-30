@@ -15,10 +15,10 @@
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119154942359-305841960.png">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119160619687-1542337893.png">
 <meta property="og:image" content="http://yoursite.com/">
-<meta property="og:image" content="http://yoursite.com/blog/source/_posts/学习Vue/mvvm.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/15/学习Vue/mvvm.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png">
-<meta property="og:updated_time" content="2019-03-30T08:50:54.180Z">
+<meta property="og:updated_time" content="2019-03-30T08:53:10.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 起步">
 <meta name="twitter:description" content="一、Vue是渐进式框架只关注视图层(view)，一点一点去使用。 二、vue中的两个核心点1. 响应的数据绑定当数据发生改变 -&amp;gt; 自动更新视图。利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于Object.definedProperty()方法。单向绑定就是把Model绑定到View，当我">
@@ -276,7 +276,7 @@
 <h2 id="组合的视图组件"><a href="#组合的视图组件" class="headerlink" title="组合的视图组件"></a>组合的视图组件</h2><p>UI页面映射为组件树<br>划分组件可维护，可重用，可测试<br><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119160619687-1542337893.png" alt="Image"></p>
 <h1 id="三、虚拟DOM"><a href="#三、虚拟DOM" class="headerlink" title="三、虚拟DOM"></a>三、虚拟DOM</h1><p>运行js是很快的，但是大量的DOM操作却很慢，用js的做法是当某一个数据发生改变的时候，拼接我们的结构，用innerHtml一次性再渲染一遍。更新数据时重新渲染整个页面，即没有改变数据的地方也重新渲染了DOM 节点，造成很大的资源浪费。<br>利用在内存中生成与真实DOM对应的数据结构，这个在内存中生成的结构成为虚拟DOM。<u>当数据发生改变时，只渲染改变的地方，而不是重新渲染整个DOM树。</u><br>第一步：模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;my-id&quot;&gt;</span><br><span class="line">    &lt;li v-for=&apos;item in list&apos;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
 <p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="/" alt="Image"></p>
-<p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="/blog/source/_posts/学习Vue/mvvm.png" alt="Image"></p>
+<p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="//yoursite.com/2018/10/15/学习Vue/mvvm.png" alt="Image"></p>
 <p>第四步：create，编译成一个真实的dom。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png" alt="Image"></p>
 <h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png" alt="Image"></p>
 <p>M：Model 数据模型<br>V：view 视图模板<br>VM：view-Model 视图模型</p>
@@ -338,7 +338,7 @@
         <p><span>本文标题:</span><a href="/2018/10/15/学习Vue/">Vue 起步</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
         <p><span>发布时间:</span>2018年10月15日 - 23时40分</p>
-        <p><span>最后更新:</span>2019年03月30日 - 16时50分</p>
+        <p><span>最后更新:</span>2019年03月30日 - 16时53分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/15/学习Vue/" title="Vue 起步">http://yoursite.com/2018/10/15/学习Vue/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/10/15/学习Vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
