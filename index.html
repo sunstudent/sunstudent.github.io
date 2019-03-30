@@ -381,8 +381,8 @@
 <h1 id="三、虚拟DOM"><a href="#三、虚拟DOM" class="headerlink" title="三、虚拟DOM"></a>三、虚拟DOM</h1><p>运行js是很快的，但是大量的DOM操作却很慢，用js的做法是当某一个数据发生改变的时候，拼接我们的结构，用innerHtml一次性再渲染一遍。更新数据时重新渲染整个页面，即没有改变数据的地方也重新渲染了DOM 节点，造成很大的资源浪费。<br>利用在内存中生成与真实DOM对应的数据结构，这个在内存中生成的结构成为虚拟DOM。<u>当数据发生改变时，只渲染改变的地方，而不是重新渲染整个DOM树。</u><br>第一步：模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;my-id&quot;&gt;</span><br><span class="line">    &lt;li v-for=&apos;item in list&apos;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
 <p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="/" alt="Image"></p>
 <p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="//yoursite.com/2018/10/15/学习Vue/mvvm.png" alt="Image"></p>
-<p>第四步：create，编译成一个真实的dom。<br><img src="https://images2018.cnblogs.com/blog/1079732/201804/1079732-20180413180117923-1962737608.png" alt="Image"></p>
-<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="https://images2017.cnblogs.com/blog/1079732/201711/1079732-20171119163529562-1272336889.png" alt="Image"></p>
+<p>第四步：create，编译成一个真实的dom。<br><img src="//yoursite.com/2018/10/15/学习Vue/view.png" alt="Image"></p>
+<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="//yoursite.com/2018/10/15/学习Vue/vuedom.png" alt="Image"></p>
 <p>M：Model 数据模型<br>V：view 视图模板<br>VM：view-Model 视图模型</p>
 
       
