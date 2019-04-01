@@ -3,19 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>Vue基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="一、列表渲染v-for指令根据一组数组的选项列表进行渲染 语法：value,key in items  |  value,key of items 变异方法 vue提供一组方法，对数组进行操作的时候，会触发视图更新。 push()　　pop()　　shift()　　unshift()　　splice()　　sort()　　reverse()  二、事件处理器v-on指令用来监听DOM事件触发代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://sunstudent.github.io/2019/01/25/hello-world/index.html">
+<meta property="og:title" content="Vue基础">
+<meta property="og:url" content="http://sunstudent.github.io/2018/08/15/vue大牛b/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一、列表渲染v-for指令根据一组数组的选项列表进行渲染 语法：value,key in items  |  value,key of items 变异方法 vue提供一组方法，对数组进行操作的时候，会触发视图更新。 push()　　pop()　　shift()　　unshift()　　splice()　　sort()　　reverse()  二、事件处理器v-on指令用来监听DOM事件触发代码">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T08:45:53.878Z">
+<meta property="og:updated_time" content="2019-04-01T01:11:52.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Vue基础">
+<meta name="twitter:description" content="一、列表渲染v-for指令根据一组数组的选项列表进行渲染 语法：value,key in items  |  value,key of items 变异方法 vue提供一组方法，对数组进行操作的时候，会触发视图更新。 push()　　pop()　　shift()　　unshift()　　splice()　　sort()　　reverse()  二、事件处理器v-on指令用来监听DOM事件触发代码">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -229,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-vue大牛b" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/01/25/hello-world/" class="article-date">
-      <time datetime="2019-01-25T12:03:27.068Z" itemprop="datePublished">2019-01-25</time>
+      <a href="/2018/08/15/vue大牛b/" class="article-date">
+      <time datetime="2018-08-15T09:05:45.000Z" itemprop="datePublished">2018-08-15</time>
 </a>
     </div>
   
@@ -246,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Vue基础
     </h1>
   
 
@@ -263,15 +263,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="一、列表渲染"><a href="#一、列表渲染" class="headerlink" title="一、列表渲染"></a>一、列表渲染</h1><p><strong>v-for指令</strong><br>根据一组数组的选项列表进行渲染</p>
+<p>语法：value,key in items  |  value,key of items</p>
+<p>变异方法</p>
+<p>vue提供一组方法，对数组进行操作的时候，会触发视图更新。</p>
+<p>push()　　pop()　　shift()　　unshift()　　splice()　　sort()　　reverse() </p>
+<h1 id="二、事件处理器"><a href="#二、事件处理器" class="headerlink" title="二、事件处理器"></a>二、事件处理器</h1><p><strong>v-on指令</strong><br>用来监听DOM事件触发代码</p>
+<p>语法：v-on:eventName=”eventHandle”</p>
+<p>指令简写：@</p>
+<p>事件处理函数：写在methods中统一管理</p>
+<p>事件对象：在事件处理函数中获取</p>
+<p><strong>事件修饰符</strong><br>事件处理函数只有纯粹的逻辑判断，不处理DOM事件的细节。例如阻止冒泡，取消默认行为，判断按键。</p>
+<p>修饰符的位置：v-on:eventName.修饰符</p>
+<p>修饰符：.stop　　.prevent　　.capture　　.self　　.once</p>
+<p>按键修饰符：.enter　　.tab　　.delete　　.esc　　.space　　.up　　.down　　.left　　.right</p>
+<p>.ctrl　　.alt　　.shift　　.meta　　.键值</p>
+<h1 id="三、表单控件数据双向绑定"><a href="#三、表单控件数据双向绑定" class="headerlink" title="三、表单控件数据双向绑定"></a>三、表单控件数据双向绑定</h1><p><strong>v-model指令</strong><br>提供对表单元素进行双向数据绑定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;todo&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码将用户输入内容和vm.todo直接绑定，还可用于Radio,Checkbox,Select等。</p>
+<h1 id="四、动态绑定class"><a href="#四、动态绑定class" class="headerlink" title="四、动态绑定class"></a>四、动态绑定class</h1><p><strong>v-bind指令</strong><br>用于动态绑定DOM元素属性，即元素属性实际值是由vm实例中的data属性提供的。</p>
+<p>class也为元素的属性，可以使用v-bind:class</p>
+<p>语法：v-bind:class=”{className:表达式}”（表达式值为true添加className）</p>
+<p>v-bind指令简写为：</p>
+<h1 id="五、条件渲染"><a href="#五、条件渲染" class="headerlink" title="五、条件渲染"></a>五、条件渲染</h1><p><strong>v-show指令</strong><br>根据表达式的值，用来显示或隐藏元素</p>
+<p>语法：v-show=”表达式”（表达式值为true显示）</p>
+<p>元素会被渲染在页面中，只根据表达式的值进行css切换</p>
+<h1 id="六、自定义指令"><a href="#六、自定义指令" class="headerlink" title="六、自定义指令"></a>六、自定义指令</h1><p>除了vue内置的指令，可以自己设置指令</p>
+<p>选项对象的directives属性</p>
+<p>{</p>
+<p>　　directives:{}</p>
+<p>}</p>
+<p>钩子函数</p>
+<p>update被绑定元素所在的模板更新时调用</p>
+<p>钩子函数中的参数：</p>
+<p>　　<strong>el</strong>:指令所绑定的元素，可以用来直接操作DOM</p>
+<p>　　<strong>binding</strong>:一个对象，包含很多属性</p>
+<p>　　　　<strong>value</strong>:指令的绑定值</p>
+<h1 id="七、计算数据"><a href="#七、计算数据" class="headerlink" title="七、计算数据"></a>七、计算数据</h1><p>模板是为了描述视图的结构，模板中放入太多逻辑会导致模板过重难以维护。</p>
+<p>例如下面在模板中筛选未完成任务个数，这样的写法是不够好的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;</span><br><span class="line">    &#123;&#123;</span><br><span class="line">        list.filter(function(item)&#123;</span><br><span class="line">            return !item.isChecked;</span><br><span class="line">        &#125;).length</span><br><span class="line">    &#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在计算一个属性时，vue.js更新它的依赖列表并缓存结果，只有当其中一个依赖发生了变化，缓存的结果才无效。</p>
+<p>语法：在选项对象中</p>
+<p>　　{</p>
+<p>　　…</p>
+<p>　　computed:{}</p>
+<p>　　}</p>
+<p>对上面的例子的改进：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    nocheckLength:function()&#123;</span><br><span class="line">        return this.list.filter(function(item)&#123;</span><br><span class="line">            return !item.isChecked;</span><br><span class="line">        &#125;).length</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 
       
       
@@ -327,13 +362,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/01/25/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/15/vue大牛b/">Vue基础</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
-        <p><span>发布时间:</span>2019年01月25日 - 20时03分</p>
-        <p><span>最后更新:</span>2019年03月30日 - 16时45分</p>
+        <p><span>发布时间:</span>2018年08月15日 - 17时05分</p>
+        <p><span>最后更新:</span>2019年04月01日 - 09时11分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/01/25/hello-world/" title="Hello World">http://sunstudent.github.io/2019/01/25/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sunstudent.github.io/2019/01/25/hello-world/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/15/vue大牛b/" title="Vue基础">http://sunstudent.github.io/2018/08/15/vue大牛b/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://sunstudent.github.io/2018/08/15/vue大牛b/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -346,20 +381,15 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/17/vue/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/20/学习Vue/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          vue
+          Vue 起步
         
       </div>
     </a>
   
-  
-    <a href="/2018/08/20/学习Vue/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue 起步</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -368,7 +398,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、列表渲染"><span class="toc-number">1.</span> <span class="toc-text">一、列表渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、事件处理器"><span class="toc-number">2.</span> <span class="toc-text">二、事件处理器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、表单控件数据双向绑定"><span class="toc-number">3.</span> <span class="toc-text">三、表单控件数据双向绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、动态绑定class"><span class="toc-number">4.</span> <span class="toc-text">四、动态绑定class</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、条件渲染"><span class="toc-number">5.</span> <span class="toc-text">五、条件渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、自定义指令"><span class="toc-number">6.</span> <span class="toc-text">六、自定义指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、计算数据"><span class="toc-number">7.</span> <span class="toc-text">七、计算数据</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -434,15 +464,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/17/vue/" title="上一篇: vue">
+            <a href="/2018/08/20/学习Vue/" title="上一篇: Vue 起步">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/08/20/学习Vue/" title="下一篇: Vue 起步">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/30/vue大牛/">vue大牛</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/vue/">vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/25/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/学习Vue/">Vue 起步</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/15/vue大牛b/">Vue基础</a></li></ul>
