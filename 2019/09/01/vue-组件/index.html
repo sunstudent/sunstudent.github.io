@@ -14,7 +14,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://sunstudent.github.io/2019/09/01/vue-组件/compents.png">
 <meta property="og:image" content="http://sunstudent.github.io/2019/09/01/vue-组件/father.png">
-<meta property="og:updated_time" content="2019-04-02T00:09:18.795Z">
+<meta property="og:updated_time" content="2019-04-02T00:14:40.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue--组件">
 <meta name="twitter:description" content="组件化开发介绍WEB中的组件是页面组成的一部分，是一个具有独立逻辑的功能或界面，同时又能根据规定的接口规则进行融合，变成一个完整的应用。比如导航，列表，弹窗等。将一个巨大复杂的东西分成粒度合理的小东西。 优点:提高开发效率，方便重复使用，简化调试步骤，提升整个项目的可维护性，便于协同开发。Link : Element可以学习里面的组件开发 Vue中的组件vue中的组件是一个自定义标签，在哪里写上这">
@@ -282,7 +282,7 @@
 <h3 id="组件选项对象的data属性"><a href="#组件选项对象的data属性" class="headerlink" title="组件选项对象的data属性"></a>组件选项对象的data属性</h3><p><strong>Question:让下拉列表一开始是隐藏的状态，在点击输入框时才显示？</strong><br>用到组件的选项对象里的<strong>data属性</strong>，<strong>注</strong>：<font color="red">组件中的data必须是函数</font>。因为每个组件都是独立的，如果他们共用一个对象，在更改一个组件数据的时候，会影响其他组件；如果是函数的话，每个组件都有自己独立的数据，相互之间不会影响。<br>然后通过绑定click事件来进行显隐控制，结合v-show和v-on指令实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data:function()&#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        selectShow:false</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; class=&quot;keyWord&quot; value=&quot;&quot; @click=&quot;selectShow = !selectShow&quot; /&gt;</span><br><span class="line">&lt;custom-li v-show=&quot;selectShow&quot;&gt;&lt;/custom-li&gt;</span><br></pre></td></tr></table></figure>
 <p>上面的<custom-li>为ul列表组件，是<custom-select>的<font color="red">子组件</font>。</custom-select></custom-li></p>
-<h3 id="更多层的数据传递"><a href="#更多层的数据传递" class="headerlink" title="更多层的数据传递"></a>更多层的数据传递</h3><p><code>#app</code>是<custom-select>的父组件，<custom-select>是<custom-li>的父组件。这样的传递是一层一层往内传递，依次进行即可。</custom-li></custom-select></custom-select></p>
+<h3 id="更多层的数据传递"><a href="#更多层的数据传递" class="headerlink" title="更多层的数据传递"></a>更多层的数据传递</h3><p><code>#app</code>是<code>&lt;custom-select&gt;</code>的父组件，<code>&lt;custom-select&gt;</code>是<code>&lt;custom-li&gt;</code>的父组件。这样的传递是一层一层往内传递，依次进行即可。</p>
 <p>step1：实例化对象中要有数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    list1:[&quot;北京&quot;,&quot;上海&quot;,&quot;杭州&quot;],</span><br><span class="line">    list2:[&quot;2017-10-12&quot;,&quot;2017-10-20&quot;,&quot;2017-10-23&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>step2:html中使用组件并绑定属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-select btn-value=&quot;查询&quot; :list=&quot;list1&quot;&gt;&lt;/custom-select&gt;    </span><br><span class="line">&lt;custom-select btn-value=&quot;搜索&quot; :list=&quot;list2&quot;&gt;&lt;/custom-select&gt;</span><br></pre></td></tr></table></figure></p>
 <p>step3:custom-select组件选项对象的props中添加自定义属性名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props:[&quot;btnValue&quot;,&quot;list&quot;]</span><br></pre></td></tr></table></figure></p>
@@ -367,7 +367,7 @@
         <p><span>本文标题:</span><a href="/2019/09/01/vue-组件/">vue--组件</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 翟源成 的个人博客">翟源成</a></p>
         <p><span>发布时间:</span>2019年09月01日 - 21时33分</p>
-        <p><span>最后更新:</span>2019年04月02日 - 08时09分</p>
+        <p><span>最后更新:</span>2019年04月02日 - 08时14分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/09/01/vue-组件/" title="vue--组件">http://sunstudent.github.io/2019/09/01/vue-组件/</a>
             <span class="copy-path" data-clipboard-text="原文: http://sunstudent.github.io/2019/09/01/vue-组件/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
