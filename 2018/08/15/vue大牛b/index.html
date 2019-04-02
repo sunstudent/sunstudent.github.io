@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Vue基础 |
+    
+    Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+</html>
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-vue大牛b" class="article article-type-post" itemscope="" itemprop="blogPost" data-scroll-reveal="">
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue基础
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2018/08/15/vue大牛b/" class="article-date">
+  <time datetime="2018-08-15T09:05:45.000Z" itemprop="datePublished">2018-08-15</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h1 id="一、列表渲染"><a href="#一、列表渲染" class="headerlink" title="一、列表渲染"></a>一、列表渲染</h1><p><strong>v-for指令</strong><br>根据一组数组的选项列表进行渲染<br>语法：value,key in items  |  value,key of items<br>变异方法<br>vue提供一组方法，对数组进行操作的时候，会触发视图更新。<br>push()　　pop()　　shift()　　unshift()　　splice()　　sort()　　reverse() </p>
+<h1 id="二、事件处理器"><a href="#二、事件处理器" class="headerlink" title="二、事件处理器"></a>二、事件处理器</h1><p><strong>v-on指令</strong><br>用来监听DOM事件触发代码</p>
+<p>语法：v-on:eventName=”eventHandle”<br>指令简写：@<br>事件处理函数：写在methods中统一管理<br>事件对象：在事件处理函数中获取<br><strong>事件修饰符</strong><br>事件处理函数只有纯粹的逻辑判断，不处理DOM事件的细节。例如阻止冒泡，取消默认行为，判断按键。<br>修饰符的位置：v-on:eventName.修饰符<br>修饰符：.stop　　.prevent　　.capture　　.self　　.once<br>按键修饰符：.enter　　.tab　　.delete　　.esc　　.space　　.up　　.down　　.left　　.right<br>.ctrl　　.alt　　.shift　　.meta　　.键值</p>
+<h1 id="三、表单控件数据双向绑定"><a href="#三、表单控件数据双向绑定" class="headerlink" title="三、表单控件数据双向绑定"></a>三、表单控件数据双向绑定</h1><p><strong>v-model指令</strong><br>提供对表单元素进行双向数据绑定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;todo&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码将用户输入内容和vm.todo直接绑定，还可用于Radio,Checkbox,Select等。</p>
+<h1 id="四、动态绑定class"><a href="#四、动态绑定class" class="headerlink" title="四、动态绑定class"></a>四、动态绑定class</h1><p><strong>v-bind指令</strong><br>用于动态绑定DOM元素属性，即元素属性实际值是由vm实例中的data属性提供的。<br>class也为元素的属性，可以使用v-bind:class<br>语法：v-bind:class=”{className:表达式}”（表达式值为true添加className）<br>v-bind指令简写为：</p>
+<h1 id="五、条件渲染"><a href="#五、条件渲染" class="headerlink" title="五、条件渲染"></a>五、条件渲染</h1><p><strong>v-show指令</strong><br>根据表达式的值，用来显示或隐藏元素<br>语法：v-show=”表达式”（表达式值为true显示）<br>元素会被渲染在页面中，只根据表达式的值进行css切换</p>
+<h1 id="六、自定义指令"><a href="#六、自定义指令" class="headerlink" title="六、自定义指令"></a>六、自定义指令</h1><p>除了vue内置的指令，可以自己设置指令<br>选项对象的directives属性<br>{<br>　　directives:{}<br>}<br>钩子函数<br>update被绑定元素所在的模板更新时调用<br>钩子函数中的参数：<br>　　<strong>el</strong>:指令所绑定的元素，可以用来直接操作DOM<br>　　<strong>binding</strong>:一个对象，包含很多属性<br>　　<strong>value</strong>:指令的绑定值</p>
+<h1 id="七、计算数据"><a href="#七、计算数据" class="headerlink" title="七、计算数据"></a>七、计算数据</h1><p>模板是为了描述视图的结构，模板中放入太多逻辑会导致模板过重难以维护。</p>
+<p>例如下面在模板中筛选未完成任务个数，这样的写法是不够好的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;</span><br><span class="line">    &#123;&#123;</span><br><span class="line">        list.filter(function(item)&#123;</span><br><span class="line">            return !item.isChecked;</span><br><span class="line">        &#125;).length</span><br><span class="line">    &#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在计算一个属性时，vue.js更新它的依赖列表并缓存结果，只有当其中一个依赖发生了变化，缓存的结果才无效。<br>语法：在选项对象中<br>　　{<br>　　…<br>　　computed:{}</p>
+<p>　　}</p>
+<p>对上面的例子的改进：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    nocheckLength:function()&#123;</span><br><span class="line">        return this.list.filter(function(item)&#123;</span><br><span class="line">            return !item.isChecked;</span><br><span class="line">        &#125;).length</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhaiyuancheng.github.io/2018/08/15/vue大牛b/" data-id="cjtzsdimh00005guy24gz8zq2" class="article-share-link">Share</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2018/08/20/学习Vue/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            Vue 起步
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Hexo</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="Hexo"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
