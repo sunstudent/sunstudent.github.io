@@ -8,22 +8,22 @@
   <meta name="description" content="一、Vue是渐进式框架只关注视图层(view)，一点一点去使用。 二、vue中的两个核心点1. 响应的数据绑定当数据发生改变 -&amp;gt; 自动更新视图。利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于Object.definedProperty()方法。单向绑定就是把Model绑定到View，当我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 起步">
-<meta property="og:url" content="http://sunstudent.github.io/2018/08/20/学习Vue/index.html">
+<meta property="og:url" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、Vue是渐进式框架只关注视图层(view)，一点一点去使用。 二、vue中的两个核心点1. 响应的数据绑定当数据发生改变 -&amp;gt; 自动更新视图。利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于Object.definedProperty()方法。单向绑定就是把Model绑定到View，当我">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/view.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/module.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/jiedian.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/shuzu.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/ul.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/mvvm.png">
-<meta property="og:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/shuxing.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/view.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/module.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/jiedian.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/shuzu.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/ul.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/mvvm.png">
+<meta property="og:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/shuxing.png">
 <meta property="og:updated_time" content="2019-04-02T00:09:21.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 起步">
 <meta name="twitter:description" content="一、Vue是渐进式框架只关注视图层(view)，一点一点去使用。 二、vue中的两个核心点1. 响应的数据绑定当数据发生改变 -&amp;gt; 自动更新视图。利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于Object.definedProperty()方法。单向绑定就是把Model绑定到View，当我">
-<meta name="twitter:image" content="http://sunstudent.github.io/2018/08/20/学习Vue/view.png">
+<meta name="twitter:image" content="http://zhaiyuancheng.github.io/2018/08/20/学习Vue/view.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -271,20 +271,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="一、Vue是渐进式框架"><a href="#一、Vue是渐进式框架" class="headerlink" title="一、Vue是渐进式框架"></a>一、Vue是渐进式框架</h1><p>只关注视图层(view)，一点一点去使用。<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/view.png" alt="Image"></p>
+        <h1 id="一、Vue是渐进式框架"><a href="#一、Vue是渐进式框架" class="headerlink" title="一、Vue是渐进式框架"></a>一、Vue是渐进式框架</h1><p>只关注视图层(view)，一点一点去使用。<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/view.png" alt="Image"></p>
 <h1 id="二、vue中的两个核心点"><a href="#二、vue中的两个核心点" class="headerlink" title="二、vue中的两个核心点"></a>二、vue中的两个核心点</h1><h2 id="1-响应的数据绑定"><a href="#1-响应的数据绑定" class="headerlink" title="1. 响应的数据绑定"></a>1. 响应的数据绑定</h2><p>当数据发生改变 -&gt; 自动更新视图。<br>利用Object.definedProperty中的setter/getter代理数据，监控对数据的操作，发生了改变就立即重新渲染。不兼容ie8。关于<u>Object.definedProperty()</u>方法。<br>单向绑定就是把Model绑定到View，当我们用JavaScript代码更新Model时，View就会自动更新。如果用户更新了View，Model的数据也自动被更新了，这种情况就是双向绑定。<br><strong>实现数据绑定的做法有以下几种：</strong><br>发布者-订阅者模式（backbone.js）：顾名思义，就是有订阅者和发布者，两者的功能，订阅是请求在某些事件(event)到达时可以通知它并执行对应的动作(action)，而发布则相对的是向订阅告知事件(event)已经到达，你可以执行对应的动作(action)了。<br>脏值检查（angular.js）<br>数据劫持（vue.js）：vue.js 则是采用[数据劫持结合发布者-订阅者模式]的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
-<h2 id="组合的视图组件"><a href="#组合的视图组件" class="headerlink" title="组合的视图组件"></a>组合的视图组件</h2><p>UI页面映射为组件树<br>划分组件可维护，可重用，可测试<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/module.png" alt="Image"></p>
+<h2 id="组合的视图组件"><a href="#组合的视图组件" class="headerlink" title="组合的视图组件"></a>组合的视图组件</h2><p>UI页面映射为组件树<br>划分组件可维护，可重用，可测试<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/module.png" alt="Image"></p>
 <h1 id="三、虚拟DOM"><a href="#三、虚拟DOM" class="headerlink" title="三、虚拟DOM"></a>三、虚拟DOM</h1><p>运行js是很快的，但是大量的DOM操作却很慢，用js的做法是当某一个数据发生改变的时候，拼接我们的结构，用innerHtml一次性再渲染一遍。更新数据时重新渲染整个页面，即没有改变数据的地方也重新渲染了DOM 节点，造成很大的资源浪费。<br>利用在内存中生成与真实DOM对应的数据结构，这个在内存中生成的结构成为虚拟DOM。<u>当数据发生改变时，只渲染改变的地方，而不是重新渲染整个DOM树。</u><br>第一步：模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;my-id&quot;&gt;</span><br><span class="line">    &lt;li v-for=&apos;item in list&apos;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
-<p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/jiedian.png" alt="Image"></p>
-<p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/shuzu.png" alt="Image"></p>
-<p>第四步：create，编译成一个真实的dom。<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/ul.png" alt="Image"></p>
-<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="//sunstudent.github.io/2018/08/20/学习Vue/mvvm.png" alt="Image"></p>
+<p>第二步：compile，模板调用内部的渲染函数。把模板中的标签拿出来调用createElement去生成这些标签。<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/jiedian.png" alt="Image"></p>
+<p>第三步：render，形成虚拟dom树。也就是一个对象<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/shuzu.png" alt="Image"></p>
+<p>第四步：create，编译成一个真实的dom。<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/ul.png" alt="Image"></p>
+<h1 id="四、MVVM模式"><a href="#四、MVVM模式" class="headerlink" title="四、MVVM模式"></a>四、MVVM模式</h1><p><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/mvvm.png" alt="Image"></p>
 <p>M：Model 数据模型<br>V：view 视图模板<br>VM：view-Model 视图模型</p>
 <p><strong>数据在M层，页面呈现在V层，相互独立的。VM层联系V和M。把数据绑定并呈现在V层；V与用户交互，页面发生改变，VM监听发生改变的事件，改变M层数据，再重新渲染V层。</strong></p>
 <h1 id="五、Vue实例"><a href="#五、Vue实例" class="headerlink" title="五、Vue实例"></a>五、Vue实例</h1><p>通过vue这个构造函数创建根实例。需要传入选项对象，包含挂载元素，数据，模板，方法等等。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;demo&quot;&gt;</span><br><span class="line">    &lt;span v-on:click = &quot;clickHandle&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var data = &#123;</span><br><span class="line">        message: &apos;hello pp&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">        el: &apos;#demo&apos;,</span><br><span class="line">        data: data,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            clickHandle: function() &#123;</span><br><span class="line">                alert(&apos;点击啦&apos;);</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>1.每个vue实例都会代理其data对象的所有属性，这些被代理的属性是响应的，但<u>新添加的属性不具备响应。</u></strong></p>
 <p><strong>2.vue实例自身的属性和方法</strong></p>
-<p>以$开头，如$el  $data …在控制台打印出vm对象如下：<br><img src="//sunstudent.github.io/2018/08/20/学习Vue/shuxing.png" alt="Image"></p>
+<p>以$开头，如$el  $data …在控制台打印出vm对象如下：<br><img src="//zhaiyuancheng.github.io/2018/08/20/学习Vue/shuxing.png" alt="Image"></p>
 <h1 id="六、vue是声明式渲染"><a href="#六、vue是声明式渲染" class="headerlink" title="六、vue是声明式渲染"></a>六、vue是声明式渲染</h1><p><strong>声明式</strong>：只需要声明在哪里，做什么，无需关心如何实现。<br><strong>命令式</strong>：需要具体代码表达在哪里，做什么，如何实现。</p>
 <h1 id="七、指令"><a href="#七、指令" class="headerlink" title="七、指令"></a>七、指令</h1><p>指令是一种特殊的自定义行间属性；当表达式改变时相应的将某些行为应用到DOM上；在vue中，指令以v-开头。</p>
 <p><strong>vue中的内置指令：</strong><br><strong>1. v-text</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-text=&quot;msg&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;!-- 和下面的一样 --&gt;</span><br><span class="line">&lt;span&gt;&#123;&#123;msg&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
@@ -386,8 +386,8 @@
         <p><span>发布时间:</span>2018年08月20日 - 23时40分</p>
         <p><span>最后更新:</span>2019年04月02日 - 08时09分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/20/学习Vue/" title="Vue 起步">http://sunstudent.github.io/2018/08/20/学习Vue/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://sunstudent.github.io/2018/08/20/学习Vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/20/学习Vue/" title="Vue 起步">http://zhaiyuancheng.github.io/2018/08/20/学习Vue/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhaiyuancheng.github.io/2018/08/20/学习Vue/　　作者: 翟源成" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
